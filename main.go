@@ -50,7 +50,7 @@ func deleteFromTimeline(api *anaconda.TwitterApi, ageLimit time.Duration) {
 			log.Error("Couldn't parse time ", err)
 		} else {
 			if time.Since(createdTime) > ageLimit {
-                if t.Id != "975763655773089797" {
+                if t.Id != 975763655773089797 {
                     _, err := api.DeleteTweet(t.Id, true)
                     log.Info("DELETED: Age - ", time.Since(createdTime).Round(1*time.Minute), " - ", t.Text)
                     if err != nil {
